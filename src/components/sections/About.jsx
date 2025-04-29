@@ -43,7 +43,7 @@ const About = () => {
               <div className={`absolute inset-0 rounded-2xl ${darkMode ? 'bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20' : 'bg-gradient-to-br from-blue-100 via-pink-100 to-purple-100'} transform rotate-6`}></div>
               <div className={`absolute inset-0 rounded-2xl ${darkMode ? 'bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20' : 'bg-gradient-to-br from-blue-100 via-pink-100 to-purple-100'} transform -rotate-6`}></div>
               <img 
-                src="/src/assets/images/me.jpg" 
+                src="https://avatars.githubusercontent.com/u/198903048?v=4" 
                 alt="Profile" 
                 className="relative z-10 w-full h-full rounded-2xl object-cover shadow-xl border-4 border-white dark:border-gray-800"
               />
