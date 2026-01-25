@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import { useDarkMode } from '../../DarkModeContext';
+import { useNavigate } from 'react-router-dom';
 
 const LatestWork = () => {
   const { darkMode } = useDarkMode();
+  const navigate = useNavigate();
 
   const techStack = [
     { name: 'React', color: 'from-cyan-400 to-blue-500' },
@@ -14,7 +16,7 @@ const LatestWork = () => {
   ];
 
   return (
-    <section className={`py-20 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+    <section id="latest-work" className={`py-20 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,22 +28,23 @@ const LatestWork = () => {
           <h2 className={`text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent ${
             darkMode ? 'bg-gradient-to-r from-cyan-400 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-pink-500'
           }`}>
-            Latest Work
+            My Final Year Research
           </h2>
           <div className={`w-32 h-1 mx-auto rounded-full ${
             darkMode ? 'bg-gradient-to-r from-cyan-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-pink-500'
           }`}></div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className={`rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto transition-all duration-300 hover:shadow-xl ${
-            darkMode ? 'bg-gray-800' : 'bg-white'
-          }`}
-        >
+        <div onClick={() => navigate('/projects/10')} className="cursor-pointer">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className={`rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto transition-all duration-300 hover:shadow-xl ${
+              darkMode ? 'bg-gray-800' : 'bg-white'
+            }`}
+          >
           <div className="relative group">
             <img 
               src="https://github.com/CharithaBimsara/WallColorGenAI/raw/main/Demo.gif" 
@@ -115,6 +118,7 @@ const LatestWork = () => {
             </div>
           </div>
         </motion.div>
+        </div>
       </div>
     </section>
   );

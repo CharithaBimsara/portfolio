@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Github, ExternalLink, Calendar, Code, Users, Star, Sparkles } from 'lucide-react';
 import { useDarkMode } from '../../DarkModeContext';
 import allProjects from '../../data/projects';
-import ImageGallerySlider from '../ui/ImageGallerySlider';
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -40,6 +39,11 @@ const ProjectDetails = () => {
       
       fetchProjectData();
     }, [project]);
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   
     if (!project) {
       return (
@@ -252,108 +256,174 @@ const ProjectDetails = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              {/* Image Gallery Slider - NEW COMPONENT */}
+              {/* Image Gallery - Beautiful Grid Layout */}
               {project.galleryImages && project.galleryImages.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
+                  className="mb-8"
                 >
-                  <ImageGallerySlider 
-                    images={project.galleryImages} 
-                    autoSlideInterval={5000} // 5 seconds per slide
-                  />
+                  <h2 className={`text-2xl font-bold mb-6 flex items-center ${
+                    darkMode ? 'text-purple-400' : 'text-purple-600'
+                  }`}>
+                    <Sparkles className="mr-2" size={20} />
+                    Project Gallery
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {project.galleryImages.map((image, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.1, duration: 0.5 }}
+                        className="relative group"
+                      >
+                        <div className={`rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
+                          darkMode ? 'bg-gray-700' : 'bg-white'
+                        }`}>
+                          <img
+                            src={image}
+                            alt={`${project.title} screenshot ${index + 1}`}
+                            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                          <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full">
+                            {index + 1}
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </motion.div>
               )}
-              
-              {/* Technologies */}
-              <div className={`mb-6 p-5 rounded-xl ${
+
+              {/* Technologies - Enhanced Design */}
+              <div className={`mb-8 p-6 rounded-xl ${
                 darkMode ? 'bg-gray-800' : 'bg-white'
               } shadow-lg`}>
-                <h2 className={`text-2xl font-bold mb-4 flex items-center ${
+                <h2 className={`text-2xl font-bold mb-6 flex items-center ${
                   darkMode ? 'text-fuchsia-400' : 'text-fuchsia-600'
                 }`}>
                   <Code className="mr-2" size={24} />
                   Technologies Stack
                 </h2>
-                <div className="flex flex-wrap gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                   {project.technologies.map((tech, i) => (
-                    <motion.span 
+                    <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.1 * i }}
-                      className={`px-4 py-2 rounded-full text-sm font-medium ${
-                        darkMode 
-                          ? 'bg-gradient-to-r from-purple-700 to-pink-700 text-white' 
-                          : 'bg-gradient-to-r from-pink-200 to-purple-200 text-purple-800'
-                      } shadow-md`}
+                      className={`p-3 rounded-lg text-center transition-all duration-300 hover:scale-105 ${
+                        darkMode
+                          ? 'bg-gradient-to-r from-purple-700 to-pink-700 text-white hover:shadow-lg'
+                          : 'bg-gradient-to-r from-pink-200 to-purple-200 text-purple-800 hover:shadow-md'
+                      }`}
                     >
-                      {tech}
-                    </motion.span>
+                      <span className="font-medium text-sm">{tech}</span>
+                    </motion.div>
                   ))}
                 </div>
               </div>
-  
-              {/* Project details */}
-              <div className={`p-5 rounded-xl ${
+
+              {/* Project Description - Better Typography */}
+              <div className={`mb-8 p-6 rounded-xl ${
                 darkMode ? 'bg-gray-800' : 'bg-white'
               } shadow-lg`}>
-                <h2 className={`text-2xl font-bold mb-4 flex items-center ${
-                  darkMode ? 'text-purple-400' : 'text-purple-600'
+                <h2 className={`text-2xl font-bold mb-6 flex items-center ${
+                  darkMode ? 'text-cyan-400' : 'text-cyan-600'
                 }`}>
                   <Sparkles className="mr-2" size={20} />
-                  Project Details
+                  Project Story
                 </h2>
-                
+
                 {project.manualDescription ? (
-                  <div className={`prose max-w-none ${
-                     darkMode ? 'text-gray-400' : 'text-gray-500'
-                  }`}>
-                    {project.manualDescription.split('\n').map((paragraph, i) => (
-                      <p key={i} className="mb-4">{paragraph}</p>
-                    ))}
+                  <div className={`space-y-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {(() => {
+                      const splitDescription = (text) => {
+                        const sentences = text.split('. ');
+                        const paragraphs = [];
+                        let current = '';
+                        let sentenceCount = 0;
+                        for (let sentence of sentences) {
+                          current += sentence + '. ';
+                          sentenceCount++;
+                          if (sentenceCount >= 4) {
+                            paragraphs.push(current.trim());
+                            current = '';
+                            sentenceCount = 0;
+                          }
+                        }
+                        if (current) paragraphs.push(current.trim());
+                        return paragraphs;
+                      };
+                      return splitDescription(project.manualDescription).map((paragraph, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: i * 0.1 }}
+                          className={`p-4 rounded-lg border-l-4 ${
+                            darkMode
+                              ? 'border-cyan-400 bg-gray-700/50'
+                              : 'border-blue-400 bg-blue-50/50'
+                          }`}
+                        >
+                          <p className="leading-relaxed text-sm md:text-base">{paragraph}</p>
+                        </motion.div>
+                      ));
+                    })()}
                   </div>
                 ) : (
                   <div className={`text-center py-8 ${
                     darkMode ? 'text-gray-400' : 'text-gray-500'
                   }`}>
-                    No detailed description available yet.
+                    <Sparkles className="mx-auto mb-2" size={24} />
+                    <p>No detailed description available yet.</p>
                   </div>
                 )}
               </div>
-  
-              {/* Features */}
+
+              {/* Features - Enhanced List */}
               {project.features && (
-                <div className={`mt-6 p-5 rounded-xl ${
+                <div className={`p-6 rounded-xl ${
                   darkMode ? 'bg-gray-800' : 'bg-white'
                 } shadow-lg`}>
-                  <h2 className={`text-2xl font-bold mb-4 flex items-center ${
-                    darkMode ? 'text-cyan-400' : 'text-cyan-600'
+                  <h2 className={`text-2xl font-bold mb-6 flex items-center ${
+                    darkMode ? 'text-green-400' : 'text-green-600'
                   }`}>
                     <Sparkles className="mr-2" size={20} />
                     Key Features
                   </h2>
-                  <ul className={`space-y-3 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-700'
-                  }`}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {project.features.map((feature, i) => (
-                      <motion.li 
+                      <motion.div
                         key={i}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 * i }}
-                        className="flex items-start"
+                        className={`p-4 rounded-lg border-l-4 ${
+                          darkMode
+                            ? 'border-pink-400 bg-gray-700/30'
+                            : 'border-pink-400 bg-pink-50/50'
+                        }`}
                       >
-                        <span className={`inline-block mr-3 mt-1 ${
-                          darkMode ? 'text-pink-400' : 'text-pink-500'
-                        }`}>
-                          <Sparkles size={16} />
-                        </span>
-                        {feature}
-                      </motion.li>
+                        <div className="flex items-start">
+                          <span className={`inline-block mr-3 mt-1 ${
+                            darkMode ? 'text-pink-400' : 'text-pink-500'
+                          }`}>
+                            <Sparkles size={16} />
+                          </span>
+                          <span className={`font-medium ${
+                            darkMode ? 'text-gray-300' : 'text-gray-700'
+                          }`}>
+                            {feature}
+                          </span>
+                        </div>
+                      </motion.div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
             </motion.div>

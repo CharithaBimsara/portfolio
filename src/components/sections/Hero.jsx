@@ -138,7 +138,7 @@ const Hero = () => {
           >
             <motion.a 
               whileHover={{ y: -3 }}
-              href="#" 
+              href="https://github.com/CharithaBimsara" 
               className={`transition-colors ${
                 darkMode ? 'text-gray-300 hover:text-cyan-400' : 'text-white hover:text-cyan-300'
               }`} 
@@ -148,7 +148,7 @@ const Hero = () => {
             </motion.a>
             <motion.a 
               whileHover={{ y: -3 }}
-              href="#" 
+              href="https://www.linkedin.com/in/charithaadikari" 
               className={`transition-colors ${
                 darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-white hover:text-blue-300'
               }`} 

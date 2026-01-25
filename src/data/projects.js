@@ -1,3 +1,7 @@
+import maraudersMap1 from '../assets/images/map/marauders-map-1.jpg';
+import maraudersMap2 from '../assets/images/map/marauders-map-2.jpg';
+import maraudersMap3 from '../assets/images/map/marauders-map-3.jpg';
+
 const allProjects = [
   {
     "id": 1,
@@ -408,6 +412,30 @@ const allProjects = [
       "Simple and intuitive interface"
     ],
     "manualDescription": "The Random Background Color Changer is a lightweight yet engaging web application designed to generate and display random color combinations with a simple user interaction. Built using fundamental web technologies—HTML for structure, CSS for styling, and JavaScript for functionality—this project serves as an excellent demonstration of basic interactive web development principles. Upon loading, the application presents users with a minimalist interface featuring a prominent button that, when clicked, triggers a JavaScript function to generate a random hexadecimal color code. This code is then applied as the background color of the entire page, creating an immediate visual change. The current color's hexadecimal value is displayed prominently on the screen, allowing users to note colors they find appealing for use in their own projects. A convenient copy-to-clipboard button accompanies the color code, enabling users to quickly capture colors they wish to use elsewhere. The application maintains a history of recently generated colors, displayed as swatches that users can click to return to previous colors. Enhanced features include the ability to toggle between different color formats (HEX, RGB, and HSL), save favorite colors to local storage for future reference, and adjust brightness or saturation of generated colors using simple slider controls. The user interface is designed to be both aesthetically pleasing and fully responsive, functioning perfectly across devices from desktop computers to mobile phones. While simple in concept, this Random Background Color Changer serves multiple purposes: it functions as a practical tool for designers seeking color inspiration, a learning resource for beginning web developers, and a demonstrative example of how even straightforward applications can provide genuine utility and an engaging user experience through thoughtful implementation of basic web technologies."
+  },
+  {
+    "id": 20,
+    "title": "Virtual Marauder's Map",
+    "description": "Harry Potter themed real-time multiplayer map with Firebase for proximity chat and directional footprints.",
+    "image": maraudersMap1,
+    "galleryImages": [
+      maraudersMap1,
+      maraudersMap2,
+      maraudersMap3
+    ],
+    "technologies": ["Next.js 14", "Tailwind CSS", "Framer Motion", "Firebase Realtime Database", "HTML5 Canvas"],
+    "type": "Full Stack",
+    "githubLink": "https://github.com/CharithaBimsara/marauders-map",
+    "liveLink": "https://mischiefmanagedchat.vercel.app",
+    "featured": true,
+    "features": [
+      "Full-screen, parchment-styled map with burnt edges and candle flicker",
+      "Direction-aware, house-colored footprints with ink-fade trails",
+      "Moving staircases, room labels, secret passages, and common-room zones",
+      "Proximity chat with whisper mode and owl notifications",
+      "Block/report moderation and a 20-user-per-room cap"
+    ],
+    "manualDescription": "Virtual Marauder's Map is a lightweight, immersive, Harry Potter–inspired multiplayer map where users appear as footprints and can chat when nearby. Built with Next.js 14, Tailwind CSS, Framer Motion, and Firebase Realtime Database, this project serves as a prototype for social interactions and spatial chat mechanics in a themed environment. The application features a full-screen, parchment-styled map with burnt edges and candle flicker effects, creating an authentic magical atmosphere. Users appear as direction-aware, house-colored footprints with ink-fade trails that show their movement patterns. The map includes interactive elements like moving staircases, room labels, secret passages, and common-room zones. Proximity chat allows users to communicate only when they're nearby, with whisper mode and owl notifications for messages. The system includes moderation features like block/report functionality and caps rooms at 20 users to maintain performance. This project demonstrates advanced real-time web development techniques using Firebase for data synchronization and HTML5 Canvas for smooth rendering of the interactive map interface."
   }
 
 ];

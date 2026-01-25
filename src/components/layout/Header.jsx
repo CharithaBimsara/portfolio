@@ -27,6 +27,10 @@ const Header = () => {
     setIsMenuOpen(false); // close mobile menu if open
   };
 
+  const handleExperienceClick = () => {
+    handleNavClick('experience');
+  };
+
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-opacity-90' : ''} ${darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,6 +51,12 @@ const Header = () => {
             </a>
             <a onClick={() => handleNavClick('projects')} className="cursor-pointer px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:text-fuchsia-600">
               Projects
+            </a>
+            <a onClick={handleExperienceClick} className="cursor-pointer px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:text-purple-600">
+              Experience
+            </a>
+            <a onClick={() => handleNavClick('latest-work')} className="cursor-pointer px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:text-indigo-600">
+              Final Year Research
             </a>
             <a onClick={() => handleNavClick('contact')} className="cursor-pointer px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:text-green-600">
               Contact
@@ -88,6 +98,12 @@ const Header = () => {
           </a>
           <a onClick={() => handleNavClick('projects')} className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer hover:bg-gray-100">
             Projects
+          </a>
+          <a onClick={handleExperienceClick} className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer hover:bg-gray-100">
+            Experience
+          </a>
+          <a onClick={() => handleNavClick('latest-work')} className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer hover:bg-gray-100">
+            Final Year Research
           </a>
           <a onClick={() => handleNavClick('contact')} className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer hover:bg-gray-100">
             Contact
