@@ -87,10 +87,10 @@ const Hero = () => {
             Building modern web experiences with 
             <span className={`font-semibold ${
               darkMode ? 'text-cyan-400' : 'text-cyan-300'
-            }`}> React</span>, 
+            }`}> Vue3</span>, 
             <span className={`font-semibold ${
               darkMode ? 'text-purple-400' : 'text-purple-300'
-            }`}> Node.js</span>, and 
+            }`}> .Net Core</span>, and 
             <span className={`font-semibold ${
               darkMode ? 'text-pink-400' : 'text-pink-300'
             }`}> TypeScript</span>.
