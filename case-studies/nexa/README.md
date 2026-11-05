@@ -30,3 +30,7 @@ Research: [An AI-Driven Approach for User-Personalized Interior Color Matching U
 Visual evidence: frame from the existing project demonstration. Team research; no sole-authorship claim.
 
 [Portfolio](https://charithaadikari.vercel.app/projects/10)
+
+## Technical article
+
+[How We Built Nexa Color Match: Flutter, Spring Boot, and Python](https://medium.com/@charithabimsara/how-we-built-nexa-color-match-with-flutter-spring-boot-and-python-f1f95de7c8ff)

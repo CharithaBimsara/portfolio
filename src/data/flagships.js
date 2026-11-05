@@ -1,6 +1,7 @@
 const base = '/showcase/';
 export const flagships = [
   {
+    technicalArticle: { title: 'How We Built Nexa Color Match', url: 'https://medium.com/@charithabimsara/how-we-built-nexa-color-match-with-flutter-spring-boot-and-python-f1f95de7c8ff' },
     id: 10, slug: 'nexa', title: 'Nexa Color Match', label: 'AI + COMPUTER VISION', type: 'AI Application',
     description: 'Personalized interior wall-color exploration, connecting a Flutter experience with Spring Boot APIs and Python image analysis.',
     technologies: ['Flutter', 'Java', 'Spring Boot', 'Python', 'OpenCV', 'MySQL', 'AWS S3'],

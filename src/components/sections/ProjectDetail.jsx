@@ -174,6 +174,7 @@ const ProjectDetails = () => {
               </div>
   
               {project.contribution && <div className="mb-6 p-5 rounded-xl border border-teal-600"><h2 className="font-bold text-xl mb-3">My contribution</h2><p>{project.contribution}</p>{project.credits && <p className="mt-4 text-sm">{project.credits}</p>}{project.publication && <a className="block mt-4 text-teal-600 underline" href={project.publication.url} target="_blank" rel="noopener noreferrer">{project.publication.title} — {project.publication.venue}</a>}<p className="mt-4 text-sm opacity-75">{project.sourceNote}</p></div>}
+              {project.technicalArticle && <p className="mb-6"><a className="text-teal-600 underline" href={project.technicalArticle.url} target="_blank" rel="noopener noreferrer">Read the technical article: {project.technicalArticle.title}</a></p>}
               {/* Project links */}
               <div className={`mb-6 p-5 rounded-xl ${
                 darkMode ? 'bg-gray-800' : 'bg-white'
