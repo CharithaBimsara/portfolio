@@ -173,6 +173,7 @@ const ProjectDetails = () => {
                 </p>
               </div>
   
+              {project.contribution && <div className="mb-6 p-5 rounded-xl border border-teal-600"><h2 className="font-bold text-xl mb-3">My contribution</h2><p>{project.contribution}</p>{project.credits && <p className="mt-4 text-sm">{project.credits}</p>}{project.publication && <a className="block mt-4 text-teal-600 underline" href={project.publication.url} target="_blank" rel="noopener noreferrer">{project.publication.title} — {project.publication.venue}</a>}<p className="mt-4 text-sm opacity-75">{project.sourceNote}</p></div>}
               {/* Project links */}
               <div className={`mb-6 p-5 rounded-xl ${
                 darkMode ? 'bg-gray-800' : 'bg-white'
@@ -285,7 +286,7 @@ const ProjectDetails = () => {
                           <img
                             src={image}
                             alt={`${project.title} screenshot ${index + 1}`}
-                            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                            className="w-full aspect-[8/5] object-contain"
                           />
                           <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                           <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-full">

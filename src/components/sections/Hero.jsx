@@ -10,8 +10,8 @@ const Hero = () => {
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className={`absolute top-0 left-0 w-full h-full opacity-90 animate-gradient-shift ${
-          darkMode 
-            ? 'bg-gradient-to-br from-gray-800 via-gray-900 to-indigo-900' 
+          darkMode
+            ? 'bg-gradient-to-br from-gray-800 via-gray-900 to-indigo-900'
             : 'bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500'
         }`}></div>
         <div className={`absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t ${
@@ -20,7 +20,7 @@ const Hero = () => {
       </div>
 
       {/* Floating animated elements */}
-      <motion.div 
+      <motion.div
         className={`absolute top-20 left-10 w-32 h-32 rounded-full blur-xl ${
           darkMode ? 'bg-cyan-500 opacity-10' : 'bg-cyan-400 opacity-20'
         }`}
@@ -34,7 +34,7 @@ const Hero = () => {
           ease: "easeInOut",
         }}
       />
-      <motion.div 
+      <motion.div
         className={`absolute bottom-20 right-10 w-40 h-40 rounded-full blur-xl ${
           darkMode ? 'bg-fuchsia-500 opacity-10' : 'bg-fuchsia-400 opacity-20'
         }`}
@@ -59,16 +59,16 @@ const Hero = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight"
           >
             <span className={`bg-clip-text text-transparent ${
-              darkMode 
-                ? 'bg-gradient-to-r from-cyan-300 to-white' 
+              darkMode
+                ? 'bg-gradient-to-r from-cyan-300 to-white'
                 : 'bg-gradient-to-r from-cyan-400 to-white'
             }`}>
               Full Stack
             </span>
             <br />
             <span className={`bg-clip-text text-transparent ${
-              darkMode 
-                ? 'bg-gradient-to-r from-white to-fuchsia-400' 
+              darkMode
+                ? 'bg-gradient-to-r from-white to-fuchsia-400'
                 : 'bg-gradient-to-r from-white to-fuchsia-300'
             }`}>
               Developer
@@ -84,16 +84,16 @@ const Hero = () => {
               darkMode ? 'text-gray-300' : 'text-white/80'
             }`}
           >
-            Building modern web experiences with 
+            Building web and mobile software with
             <span className={`font-semibold ${
               darkMode ? 'text-cyan-400' : 'text-cyan-300'
-            }`}> Vue3</span>, 
+            }`}> React</span>,
             <span className={`font-semibold ${
               darkMode ? 'text-purple-400' : 'text-purple-300'
-            }`}> .Net Core</span>, and 
+            }`}> ASP.NET Core</span>, and
             <span className={`font-semibold ${
               darkMode ? 'text-pink-400' : 'text-pink-300'
-            }`}> TypeScript</span>.
+            }`}> Spring Boot</span>.
           </motion.p>
 
           {/* CTA buttons */}
@@ -106,10 +106,10 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#contact" 
+              href="#contact"
               className={`flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:shadow-xl ${
-                darkMode 
-                  ? 'bg-white text-gray-900 hover:bg-gray-200' 
+                darkMode
+                  ? 'bg-white text-gray-900 hover:bg-gray-200'
                   : 'bg-white text-indigo-600 hover:bg-opacity-90'
               }`}
             >
@@ -118,10 +118,10 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#projects" 
+              href="#projects"
               className={`flex items-center justify-center px-8 py-4 border-2 rounded-full font-bold text-lg transition-all duration-300 hover:shadow-xl ${
-                darkMode 
-                  ? 'border-white text-white hover:bg-white/10' 
+                darkMode
+                  ? 'border-white text-white hover:bg-white/10'
                   : 'border-white text-white hover:bg-white/10'
               }`}
             >
@@ -136,32 +136,32 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex gap-6"
           >
-            <motion.a 
+            <motion.a
               whileHover={{ y: -3 }}
-              href="https://github.com/CharithaBimsara" 
+              href="https://github.com/CharithaBimsara"
               className={`transition-colors ${
                 darkMode ? 'text-gray-300 hover:text-cyan-400' : 'text-white hover:text-cyan-300'
-              }`} 
+              }`}
               aria-label="GitHub"
             >
               <Github size={24} />
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ y: -3 }}
-              href="https://www.linkedin.com/in/charithaadikari" 
+              href="https://www.linkedin.com/in/charithaadikari"
               className={`transition-colors ${
                 darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-white hover:text-blue-300'
-              }`} 
+              }`}
               aria-label="LinkedIn"
             >
               <Linkedin size={24} />
             </motion.a>
-            <motion.a 
+            <motion.a
               whileHover={{ y: -3 }}
-              href="#" 
+              href="#"
               className={`transition-colors ${
                 darkMode ? 'text-gray-300 hover:text-sky-400' : 'text-white hover:text-sky-300'
-              }`} 
+              }`}
               aria-label="Twitter"
             >
               <Twitter size={24} />

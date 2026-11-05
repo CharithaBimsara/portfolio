@@ -1,3 +1,4 @@
+import flagships from './flagships';
 import maraudersMap1 from '../assets/images/map/marauders-map-1.jpg';
 import maraudersMap2 from '../assets/images/map/marauders-map-2.jpg';
 import maraudersMap3 from '../assets/images/map/marauders-map-3.jpg';
@@ -440,4 +441,4 @@ const allProjects = [
 
 ];
 
-export default allProjects;
+export default [...flagships, ...allProjects.filter(p => p.id !== 10).map(p => ({ ...p, featured: false }))];

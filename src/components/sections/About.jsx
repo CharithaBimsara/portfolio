@@ -33,7 +33,7 @@ const About = () => {
   ];
 
   const education = {
-    degree: 'Bachelor of Science in Information Technology',
+    degree: 'BSc Information Technology — Second Class Lower Division',
     university: 'Rajarata University of Sri Lanka',
     period: '2022 – 2025',
     icon: <GraduationCap size={24} />
@@ -113,7 +113,7 @@ const About = () => {
               </div>
               <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p className="text-sm leading-relaxed">
-                  Software Engineering Intern with hands-on experience in cloud deployment, full-stack development, and modern technology stacks. Proficient in database systems, Java, React, Flutter, Spring Boot, Vue, and .NET, with a strong passion for building efficient software solutions to complex problems.
+                  Full-Stack Software Engineer and BSc Information Technology graduate from Rajarata University of Sri Lanka (Second Class Lower Division). I build business applications, mobile tools and API integrations using React, ASP.NET Core, Spring Boot and Flutter.
                 </p>
                 <p className="text-sm leading-relaxed">
                   Demonstrated ability to work independently on innovative projects as well as collaboratively in team-oriented environments. Committed to continuous learning and staying updated with the latest industry trends and technologies.
