@@ -30,7 +30,7 @@ Existing employment information was not altered.
 ## GitHub
 Profile README now contains six cover images, technology stacks and case-study links. Rendered README was inspected in the signed-in GitHub browser.
 Missing flagship showcases are published as six folders in the portfolio repository, avoiding unsupported source redistribution or invented repository URLs.
-The pin editor was saved after removing Bookstore, React academic POS, both Movie repositories and TaskApiDemo, and selecting portfolio while retaining WallColorGenAI. Final pin persistence was not independently confirmed: the final reload timed out.
+The pin editor was saved after removing Bookstore, React academic POS, both Movie repositories and TaskApiDemo, and selecting portfolio while retaining WallColorGenAI. Final browser inspection confirmed only WallColorGenAI and portfolio are pinned; Movie and Task are absent.
 No private repository was made public.
 
 ## Privacy and ownership
@@ -48,4 +48,4 @@ The six source applications were not rebuilt or regression-tested as part of thi
 GitHub connector writes returned 403; authenticated Windows Git was used successfully.
 Vercel connector team-scoped reads returned 403; the existing authenticated browser and Git integration were used successfully.
 Several LinkedIn file-picker and browser commands timed out. Link editor thumbnail uploads succeeded as the supported alternative.
-Final pin reload and exact LinkedIn ordering remain unverified/unfinished; these are not claimed complete.
+Exact LinkedIn ordering remains unfinished. Pin persistence is verified.
