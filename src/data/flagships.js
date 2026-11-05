@@ -56,5 +56,5 @@ export const flagships = [
     manualDescription: 'This mobile commerce project is separate from my academic React and Spring Boot POS. The Flutter client integrates with an ASP.NET Core modular backend and PostgreSQL. SQLite supports local persistence and queued synchronization while the server remains authoritative for authorization and financial records. The implementation includes billing services, sale-receipt snapshots, receipt previews and offline-sale handling. This case study presents permitted implementation concepts without publishing organization-owned source or customer information.',
     sourceNote: 'Public case study. Visual evidence: sanitized device QA capture of the synchronization screen. Organization-owned source remains private.'
   }
-].map(p => ({ ...p, featured: true, image: `${base}${p.slug}-cover.webp`, galleryImages: [`${base}${p.slug}-features.webp`, `${base}${p.slug}-architecture.webp`] }));
+].map(p => ({ ...p, githubLink: `https://github.com/CharithaBimsara/portfolio/tree/main/case-studies/${p.slug}`, featured: true, image: `${base}${p.slug}-cover.webp`, galleryImages: [`${base}${p.slug}-features.webp`, `${base}${p.slug}-architecture.webp`] }));
 export default flagships;
