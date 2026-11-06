@@ -1,1 +1,1 @@
-{"rewrites":[{"source":"/((?!assets/|showcase/|vite.svg).*)","destination":"/index.html"}]}
+{"rewrites":[{"source":"/((?!assets/|showcase/|favicon.svg|vite.svg).*)","destination":"/index.html"}]}

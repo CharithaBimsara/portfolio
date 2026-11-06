@@ -1,4 +1,4 @@
-const base = '/showcase/';
+﻿const base = '/showcase/';
 export const flagships = [
   {
     technicalArticle: { title: 'How We Built Nexa Color Match', url: 'https://medium.com/@charithabimsara/how-we-built-nexa-color-match-with-flutter-spring-boot-and-python-f1f95de7c8ff' },
@@ -31,6 +31,7 @@ export const flagships = [
     sourceNote: 'Visual evidence: existing device capture of the Flutter application. No customer records are shown.'
   },
   {
+    technicalArticle: { title: 'Building MeetMind AI: Connecting a Chrome Extension, Live Transcription, and a Flutter Android Companion', url: 'https://medium.com/@charithabimsara/building-meetmind-ai-live-transcription-from-chrome-to-android-46a91a2c8f28' },
     id: 103, slug: 'meetmind', title: 'MeetMind AI', label: 'SPEECH + DEVICE SYNC', type: 'AI Application',
     description: 'A Chrome extension and Flutter Android companion for Sinhala and English captions, transcript workspaces and AI questions.',
     technologies: ['JavaScript', 'Chrome Extensions', 'Web Speech API', 'Flutter', 'Supabase', 'Gemini'],
@@ -59,3 +60,4 @@ export const flagships = [
   }
 ].map(p => ({ ...p, githubLink: `https://github.com/CharithaBimsara/portfolio/tree/main/case-studies/${p.slug}`, featured: true, image: `${base}${p.slug}-cover.webp`, galleryImages: [`${base}${p.slug}-features.webp`, `${base}${p.slug}-architecture.webp`] }));
 export default flagships;
+

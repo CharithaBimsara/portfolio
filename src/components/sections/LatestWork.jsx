@@ -1,7 +1,0 @@
-import { Link } from 'react-router-dom';
-import { useDarkMode } from '../../DarkModeContext';
-import flagships from '../../data/flagships';
-export default function LatestWork() {
- const { darkMode } = useDarkMode();
- return <section id="latest-work" className={`py-20 ${darkMode ? 'bg-gray-950 text-white' : 'bg-stone-50 text-slate-900'}`}><div className="max-w-7xl mx-auto px-6"><p className="uppercase tracking-widest text-teal-600 text-sm font-semibold">Selected engineering work</p><h2 className="text-4xl md:text-5xl font-bold mt-4 mb-5">Business systems. AI. Mobile.</h2><p className="max-w-2xl text-lg opacity-75 mb-12">Six projects spanning full-stack workflows, computer vision and practical mobile tools.</p><div className="grid md:grid-cols-2 gap-8">{flagships.map((p,i)=><Link key={p.id} to={`/projects/${p.id}`} className={`rounded-2xl overflow-hidden border ${darkMode ? 'border-slate-700 bg-slate-900' : 'border-stone-200 bg-white'}`}><img src={p.image} alt={`${p.title} project cover`} width="1600" height="1000" loading={i ? 'lazy' : 'eager'} className="w-full aspect-[8/5] object-contain"/><div className="p-7"><p className="text-xs tracking-widest text-teal-600 font-semibold">{p.label}</p><h3 className="text-2xl font-bold mt-3">{p.title}</h3><p className="mt-3 leading-relaxed opacity-80">{p.description}</p><p className="mt-5 text-sm opacity-70">{p.technologies.slice(0,4).join(' · ')}</p><p className="mt-6 font-semibold text-teal-600">Explore the case study →</p></div></Link>)}</div></div></section>;
-}
